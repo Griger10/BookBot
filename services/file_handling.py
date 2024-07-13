@@ -39,5 +39,4 @@ def prepare_book(path: str) -> None:
         page_number += 1
 
 
-
 prepare_book(os.path.join(sys.path[0], os.path.normpath(BOOK_PATH)))
