@@ -29,7 +29,14 @@ def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
 
 
 def prepare_book(path: str) -> None:
-    pass
+    with open(file=path, mode='r', encoding='utf-8') as file:
+        text = file.read()
+    start, page_number = 0, 1
+    while start < len(text):
+        page_text, page_size = _get_part_text(text, start, PAGE_SIZE)
+        start += page_size
+        book[page_number] = page_text.strip()
+        page_number += 1
 
 
 # Вызов функции prepare_book для подготовки книги из текстового файла
