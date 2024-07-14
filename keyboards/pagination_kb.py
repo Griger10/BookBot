@@ -3,7 +3,7 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder
 from Bots.BookBot.lexicon.lexicon import LEXICON
 
 
-def create_pagination_by(*buttons: str) -> InlineKeyboardMarkup:
+def create_pagination(*buttons: str) -> InlineKeyboardMarkup:
     kb_builder = InlineKeyboardBuilder()
     kb_builder.row(*[InlineKeyboardButton(text=LEXICON[button] if button in LEXICON else button, callback_data=button)
                      for button in buttons])
