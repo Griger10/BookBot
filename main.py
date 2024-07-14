@@ -15,7 +15,7 @@ async def main():
     logging.info('Bot started')
 
     config: Config = load_config()
-    bot = Bot(token=config.tg_bot.token, parse_mode=ParseMode.HTML)
+    bot = Bot(token=config.tg_bot.token, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
     dp = Dispatcher()
 
     await set_main_menu(bot)
